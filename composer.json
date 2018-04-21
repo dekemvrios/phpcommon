@@ -1,0 +1,14 @@
+{
+  "name": "realfa/common",
+  "type": "library",
+  "require": {
+    "php": "^7.0",
+    "league/pipeline": "^0.3",
+    "justinrainbow/json-schema": "^v5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Realfa\\Common\\": "src"
+    }
+  }
+}
