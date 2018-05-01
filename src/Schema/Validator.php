@@ -26,9 +26,7 @@ class Validator
 
         $dados = json_decode(json_encode($request));
 
-        $validator->validate(
-            $dados, $schema, Constraint::CHECK_MODE_COERCE_TYPES
-        );
+        $validator->validate($dados, $schema, Constraint::CHECK_MODE_COERCE_TYPES);
 
         if (!$validator->isValid()) {
             throw new Exception($validator);

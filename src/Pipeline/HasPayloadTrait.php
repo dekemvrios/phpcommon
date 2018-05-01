@@ -29,7 +29,7 @@ trait HasPayloadTrait
     {
         $value = $this->payload($entry, false);
 
-        return !$value && $default ? $default : $value;
+        return !is_null($value) ? $value : $default;
     }
 
     /**
