@@ -25,7 +25,7 @@ trait HasPayloadTrait
      *
      * @return mixed
      */
-    protected function optional(string $entry, $default = null)
+    public function optional(string $entry, $default = null)
     {
         $value = $this->payload($entry, false);
 
@@ -37,7 +37,7 @@ trait HasPayloadTrait
      *
      * @return mixed
      */
-    protected function required(string $entry)
+    public function required(string $entry)
     {
         return $this->payload($entry, true);
     }
@@ -49,7 +49,7 @@ trait HasPayloadTrait
      * @return array|mixed|null
      * @throws \Exception
      */
-    protected function payload(string $entry, $hard = true)
+    public function payload(string $entry, $hard = true)
     {
         $elem = $this->payload;
 
