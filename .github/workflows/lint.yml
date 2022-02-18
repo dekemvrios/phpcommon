@@ -34,7 +34,13 @@ jobs:
         run: phpstan analyse -c build/config/phpstan.neon --no-progress
 
       - name: Run phpcs
-        run: phpcs -q --standard=PSR2 src/
+        run:  |
+          phpcs -q \
+            -d memory_limit=512M \
+            --standard=PSR2 \
+            --runtime-set ignore_errors_on_exit 1 \
+            --runtime-set ignore_warnings_on_exit 1 \
+            src/
 
       - name: Run phpcpd
         run: phpcpd src/
