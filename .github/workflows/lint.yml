@@ -19,7 +19,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 7.1
-          tools: phplint, phpstan
+          tools: phplint, phpstan, phpcd
 
       - name: Run composer
         run: composer install --ignore-platform-reqs --prefer-dist
