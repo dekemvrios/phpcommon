@@ -29,3 +29,6 @@ jobs:
 
       - name: Run phpstan
         run: phpstan analyse -c build/config/phpstan.neon --no-progress
+
+      - name: Run phpcd
+        run: phpcd src/
