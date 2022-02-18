@@ -19,7 +19,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 7.1
-          tools: phplint, phpstan, phpcd
+          tools: phplint, phpstan, phpcpd
 
       - name: Run composer
         run: composer install --ignore-platform-reqs --prefer-dist
@@ -30,5 +30,5 @@ jobs:
       - name: Run phpstan
         run: phpstan analyse -c build/config/phpstan.neon --no-progress
 
-      - name: Run phpcd
-        run: phpcd src/
+      - name: Run phpcpd
+        run: phpcpd src/
