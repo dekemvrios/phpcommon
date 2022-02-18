@@ -1,0 +1,28 @@
+on:
+  push:
+    tags:
+      - "*"
+
+name: Lint
+
+jobs:
+  lint:
+    name: Lint
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.1
+          tools: phplint
+
+      - name: Install dependencies
+        run: composer install --ignore-platform-reqs --prefer-dist
+
+      - name: Lint project codebase
+        run: phplint -c build/config/.phplint.yml
